@@ -1,3 +1,6 @@
+" load things. (https://github.com/tpope/vim-pathogen)
+call pathogen#infect()
+
 " turn on filetype detection, with file-specific indent and plugins enabled
 filetype plugin indent on
 
@@ -62,7 +65,18 @@ set ruler
 " vsplit the netrw viewport to the right by default
 let g:netrw_altv = 1
 
+" ===== IDE ====
+
+nmap <leader>e :NERDTreeToggle<cr>
+
+" faster window switching
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
 " ===== OS =====
 
 set backup
 set backupdir=~/.vimbackup
+
