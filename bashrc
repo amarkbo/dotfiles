@@ -4,3 +4,12 @@ export LS_COLORS=$LS_COLORS:"ow=01:di=01"
 alias ls='ls --classify --color=auto'
 
 screen -dr
+
+# from http://askubuntu.com/questions/16106/how-can-i-create-an-alias-for-cd-and-ls
+function cd() {
+    new_directory="$*";
+    if [ $# -eq 0 ]; then 
+        new_directory=${HOME};
+    fi;
+    builtin cd "${new_directory}" && ls
+}
