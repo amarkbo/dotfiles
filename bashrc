@@ -13,3 +13,17 @@ function cd() {
     fi;
     builtin cd "${new_directory}" && ls
 }
+
+function xfind() {
+    if [ -n "$3" ]; then
+        grep -n "$1" `find $2 -type f -regextype posix-extended -regex "$3"`
+    elif [ -n "$2" ]; then
+        grep -n "$1" `find $2 -type f `
+    elif [ -n "$1" ]; then
+        grep -n "$1" `find . -type f`
+    else
+        echo "usage: xfind phrase path file-regex";
+    fi
+}
+
+# hello
