@@ -51,6 +51,9 @@ set shiftround
 " expand tab into spaces
 set expandtab
 
+" auto indent
+set autoindent
+
 " ===== UI =====
 
 " show matching brackets

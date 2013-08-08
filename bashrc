@@ -3,6 +3,9 @@ export PS1='\[\e[1m\][\u@\h\:\w] $\[\e[m\] '
 export LS_COLORS=$LS_COLORS:"ow=01:di=01"
 alias ls='ls --classify --color=auto'
 
+# go to git root
+alias groot='cd $(git rev-parse --show-cdup)'
+
 screen -dr
 
 # from http://askubuntu.com/questions/16106/how-can-i-create-an-alias-for-cd-and-ls
