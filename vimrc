@@ -32,6 +32,9 @@ set incsearch
 " highlight search
 set hlsearch
 
+" unsets the last search pattern register by hitting return
+nnoremap <CR> :noh<CR><CR>
+
 " ===== INPUT =====
 
 " leader key
