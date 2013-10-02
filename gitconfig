@@ -1,6 +1,9 @@
 [user]
-	name = amar
-	email = amar@domain
+	name = Amar B.
+	email = amarkb@mit.edu
 
 [color]
     ui = auto
+
+[core]
+	excludesfile = ~/.gitignore
