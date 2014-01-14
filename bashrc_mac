@@ -1,0 +1,16 @@
+export PS1='\[\e[1m\][\u@\h\:\w] $\[\e[m\] '
+
+alias ls='ls -FG'
+
+alias sudoe='sudo -E'
+
+# from http://askubuntu.com/questions/16106/how-can-i-create-an-alias-for-cd-and-ls
+function cd() {
+    new_directory="$*";
+    if [ $# -eq 0 ]; then 
+        new_directory=${HOME};
+    fi;
+    builtin cd "${new_directory}" && ls
+}
+
+# goodbye

@@ -6,6 +6,8 @@ alias ls='ls --classify --color=auto'
 # go to git root
 alias groot='cd $(git rev-parse --show-cdup)'
 
+alias sudoe='sudo -E'
+
 screen -dr
 
 # from http://askubuntu.com/questions/16106/how-can-i-create-an-alias-for-cd-and-ls
@@ -29,4 +31,4 @@ function xfind() {
     fi
 }
 
-# hello
+# goodbye
