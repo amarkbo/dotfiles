@@ -6,6 +6,7 @@
 *.exe
 *.o
 *.so
+*.pyc
 
 # Packages #
 ############
@@ -36,6 +37,7 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+.netrwhist
 
 # temp files #
 ##############
