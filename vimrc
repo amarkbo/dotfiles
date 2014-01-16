@@ -71,6 +71,19 @@ set ruler
 " vsplit the netrw viewport to the right by default
 let g:netrw_altv = 1
 
+" pyflakes (and spellcheck) coloring
+" taken from:
+" http://stackoverflow.com/questions/3614312/change-background-color-highlight-for-errors-detected-by-pylint-with-ropevim-and
+
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
+
 " ===== IDE ====
 
 nmap <leader>e :NERDTreeToggle<cr>
@@ -85,4 +98,3 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 set backup
 set backupdir=~/.vimbackup
-

@@ -1,9 +1,5 @@
-[user]
-	name = Amar B.
-	email = amarkb@mit.edu
-
 [color]
     ui = auto
 
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.nixenv/gitignore_global
