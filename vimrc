@@ -59,6 +59,10 @@ set autoindent
 
 " ===== UI =====
 
+" menu for autocompleting
+set wildmenu
+set wildmode=list:longest,full
+
 " show matching brackets
 set showmatch
 
@@ -86,13 +90,26 @@ highlight SpellLocal term=underline cterm=underline
 
 " ===== IDE ====
 
-nmap <leader>e :NERDTreeToggle<cr>
+set autochdir
+let NERDTreeChDirMode=2
+nnoremap <leader>e :NERDTreeToggle .<CR>
+" nmap <leader>e :NERDTreeToggle<cr>
 
 " faster window switching
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+
+" ===== GUI ====
+
+if !has("gui_running")
+    let g:solarized_termtrans=1
+    let g:solarized_termcolors=256
+endif
+
+colorscheme solarized 
+set background=dark
 
 " ===== OS =====
 
