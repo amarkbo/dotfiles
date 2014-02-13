@@ -9,7 +9,9 @@ else
     export LS_COLORS=$LS_COLORS:"ow=01:di=01"
     alias ls='ls --classify --color=auto'
 
-    screen -dr
+    if [[ "$TERM" != screen* ]]; then
+        tmux attach
+    fi
 fi
 
 # go to git root
@@ -18,11 +20,9 @@ alias sudoe='sudo -E'
 alias sv='sudo -E vim'
 
 if [ -n "$ZSH_VERSION" ]; then
-    # vi mode settings
-    # http://dougblack.io/words/zsh-vi-mode.html
-    bindkey -v
-    bindkey '^R' history-incremental-search-backward
-    export KEYTIMEOUT=1
+    # Keeping this on emacs mode until I figure out how to deal with the vi mode debian issue
+    # (see: http://www.mgoff.in/2012/05/09/zsh-command-history-cursor-at-the-end-of-the-line/)
+    bindkey -e
 
     # http://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-every-cd
     function chpwd() {
@@ -44,7 +44,6 @@ elif [ -n "$BASH_VERSION" ]; then
     }
 
 fi
-
 
 function xfind() {
     if [ -n "$3" ]; then
