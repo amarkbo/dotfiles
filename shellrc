@@ -6,9 +6,6 @@ export EDITOR=vim
 if [[ "$OSTYPE" == darwin* ]]; then
     alias ls='ls -FG'
 else
-    export LS_COLORS=$LS_COLORS:"ow=01:di=01"
-    alias ls='ls --classify --color=auto'
-
     if [[ "$TERM" != screen* ]]; then
         tmux attach
     fi
@@ -27,7 +24,7 @@ if [ -n "$ZSH_VERSION" ]; then
     # http://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-every-cd
     function chpwd() {
         emulate -L zsh
-        ls -a
+        ls
     }
 
 elif [ -n "$BASH_VERSION" ]; then
