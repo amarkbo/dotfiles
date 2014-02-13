@@ -4,6 +4,7 @@ export EDITOR=vim
 
 # OS X or Linux
 if [[ "$OSTYPE" == darwin* ]]; then
+    # Keep this, because otherwise there's no classify
     alias ls='ls -FG'
 else
     if [[ "$TERM" != screen* ]]; then
