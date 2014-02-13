@@ -7,6 +7,9 @@ if [[ "$OSTYPE" == darwin* ]]; then
     # Keep this, because otherwise there's no classify
     alias ls='ls -FG'
 else
+    alias ls='ls --classify --color=auto'
+
+    # Attach to tmux
     if [[ "$TERM" != screen* ]]; then
         tmux attach
     fi
