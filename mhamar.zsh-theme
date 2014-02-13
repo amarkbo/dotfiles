@@ -5,12 +5,24 @@
 # path is autoshortened to ~30 characters
 # displays git status (if applicable in current folder)
 # turns username green if superuser, otherwise it is white
+#
 
-# if superuser make the username green
-if [ $UID -eq 0 ]; then NCOLOR="green"; else NCOLOR="white"; fi
+### TAKEN (and modified) from virtualenv.plugin.zsh
+# disables prompt mangling in virtual_env/bin/activate
+function a_virtualenv_prompt_info(){
+  if [[ -n $VIRTUAL_ENV ]]; then
+    printf "(%s%s%s) " "%{${fg[white]}%}" ${${VIRTUAL_ENV}:t} "%{$reset_color%}"
+  fi
+}
+
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+### END TAKEN
+
+# if superuser make the username red
+if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="white"; fi
 
 # prompt
-PROMPT='$(virtualenv_prompt_info)%{$reset_color%}[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[$NCOLOR]%}%60<...<%~%<<%{$reset_color%}]%(!.#.$) '
+PROMPT='$(a_virtualenv_prompt_info)[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[$NCOLOR]%}%60<...<%~%<<%{$reset_color%}]%(!.#.$) '
 RPROMPT='$(git_prompt_info)'
 
 # git theming
