@@ -5,6 +5,9 @@ syntax on
 " turn off vi compatibility
 set nocompatible
 
+" fixes weird backspace issues.
+set backspace=2
+
 " ===== BUNDLES =====
 
 " Using Vundle (info below)
@@ -24,7 +27,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
 
+
 " ===== NAVIGATION =====
+
 
 " maintain some context while scrolling
 set scrolloff=2
@@ -105,6 +110,8 @@ highlight SpellLocal term=underline cterm=underline
 
 " ===== IDE ====
 
+" so that NERDTree always opens in the current folder.
+" http://stackoverflow.com/questions/5817730/changing-root-in-nerdtree
 set autochdir
 let NERDTreeChDirMode=2
 nnoremap <leader>e :NERDTreeToggle .<CR>
