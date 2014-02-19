@@ -23,6 +23,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
@@ -115,7 +116,11 @@ highlight SpellLocal term=underline cterm=underline
 set autochdir
 let NERDTreeChDirMode=2
 nnoremap <leader>e :NERDTreeToggle .<CR>
-" nmap <leader>e :NERDTreeToggle<cr>
+
+" close omni completion tip window on selection
+" http://stackoverflow.com/questions/3105307/how-do-you-automatically-remove-the-preview-window-after-autocompletion-in-vim
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " faster window switching
 nmap <silent> <c-k> :wincmd k<CR>
