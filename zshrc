@@ -49,9 +49,10 @@ DISABLE_LS_COLORS="false"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git virtualenv vi-mode)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
+
+source $ZSH/oh-my-zsh.sh
+source ~/.nixenv/shellrc
 
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
 # export MANPATH="/usr/local/man:$MANPATH"

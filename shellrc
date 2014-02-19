@@ -17,8 +17,8 @@ fi
 
 # go to git root
 alias groot='cd $(git rev-parse --show-cdup)'
-alias sudoe='sudo -E'
 alias sv='sudo -E vim'
+alias v='vim'
 
 if [ -n "$ZSH_VERSION" ]; then
     # Keeping this on emacs mode until I figure out how to deal with the vi mode debian issue
