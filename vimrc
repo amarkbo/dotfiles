@@ -24,6 +24,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
 " Note: uses jshint
 Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
@@ -128,6 +129,9 @@ nnoremap <leader>e :NERDTreeToggle .<CR>
 " http://stackoverflow.com/questions/3105307/how-do-you-automatically-remove-the-preview-window-after-autocompletion-in-vim
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" command p
+nnoremap <leader>p :CtrlP<CR>
 
 " faster window switching
 nmap <silent> <c-k> :wincmd k<CR>
