@@ -1,4 +1,4 @@
-# mh theme
+# mh theme (amar modified)
 # preview: http://cl.ly/1y2x0W0E3t2C0F29043z
 
 # features:
@@ -7,14 +7,14 @@
 # turns username green if superuser, otherwise it is white
 #
 
-### TAKEN (and modified) from virtualenv.plugin.zsh
-# disables prompt mangling in virtual_env/bin/activate
+### TAKEN (and modified for color) from virtualenv.plugin.zsh
 function a_virtualenv_prompt_info(){
   if [[ -n $VIRTUAL_ENV ]]; then
     printf "(%s%s%s) " "%{${fg[white]}%}" ${${VIRTUAL_ENV}:t} "%{$reset_color%}"
   fi
 }
 
+# disables prompt mangling in virtual_env/bin/activate
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 ### END TAKEN
 
