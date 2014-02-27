@@ -23,14 +23,14 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
+" Note: uses jshint
 Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
-
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'Valloric/YouCompleteMe'
 
 " ===== NAVIGATION =====
-
 
 " maintain some context while scrolling
 set scrolloff=2
@@ -61,6 +61,9 @@ nnoremap <CR> :noh<CR><CR>
 " leader key
 let mapleader = ","
 
+" remaps K to split lines (opposite of J)
+nnoremap K i<CR><Esc>
+
 " ===== TABS =====
 
 " how many spaces a tab (TAB) counts for
@@ -80,7 +83,7 @@ set autoindent
 
 " ===== UI =====
 
-" menu for autocompleting
+" menu for autocompleting commands
 set wildmenu
 set wildmode=list:longest,full
 
@@ -93,12 +96,16 @@ set showmode
 " show line number ruler
 set ruler
 
-" vsplit the netrw viewport to the right by default
-let g:netrw_altv = 1
+" vsplit the netrw viewport to the right by default (now I use nerdtree, so not needed)
+" let g:netrw_altv = 1
 
-" pyflakes (and spellcheck) coloring
-" taken from:
-" http://stackoverflow.com/questions/3614312/change-background-color-highlight-for-errors-detected-by-pylint-with-ropevim-and
+" Change cursor in insert mode in tmux in iterm2
+" from: http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+" pyflakes and spellcheck coloring (no longer using pyflakes, but keeping this around anyways.)
+" from: http://stackoverflow.com/questions/3614312/change-background-color-highlight-for-errors-detected-by-pylint-with-ropevim-and
 
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
@@ -117,7 +124,7 @@ set autochdir
 let NERDTreeChDirMode=2
 nnoremap <leader>e :NERDTreeToggle .<CR>
 
-" close omni completion tip window on selection
+" close omni completion tip window on youcompleteme selection
 " http://stackoverflow.com/questions/3105307/how-do-you-automatically-remove-the-preview-window-after-autocompletion-in-vim
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
@@ -130,6 +137,7 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 " ===== GUI ====
 
+" pretty colors
 if !has("gui_running")
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
@@ -140,5 +148,6 @@ set background=dark
 
 " ===== OS =====
 
+" this has saved me a couple times.
 set backup
 set backupdir=~/.vimbackup
