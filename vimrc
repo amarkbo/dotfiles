@@ -100,10 +100,16 @@ set ruler
 " vsplit the netrw viewport to the right by default (now I use nerdtree, so not needed)
 " let g:netrw_altv = 1
 
-" Change cursor in insert mode in tmux in iterm2
+" Change cursor in insert mode iterm2 (in tmux, and not in tmux)
 " from: http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+if match($TERM, "screen")!=-1
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 " pyflakes and spellcheck coloring (no longer using pyflakes, but keeping this around anyways.)
 " from: http://stackoverflow.com/questions/3614312/change-background-color-highlight-for-errors-detected-by-pylint-with-ropevim-and
