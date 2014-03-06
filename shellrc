@@ -2,23 +2,24 @@
 
 export EDITOR=vim
 
+# go to git root
+alias v='vim'
+alias sv='sudo -E vim'
+alias groot='cd $(git rev-parse --show-cdup)'
+
 # OS X or Linux
 if [[ "$OSTYPE" == darwin* ]]; then
     # Keep this, because otherwise there's no classify
     alias ls='ls -FG'
 else
     alias ls='ls --classify --color=auto'
+    alias ack='ack-grep'
 
     # Attach to tmux
     if [[ "$TERM" != screen* ]]; then
         tmux attach
     fi
 fi
-
-# go to git root
-alias groot='cd $(git rev-parse --show-cdup)'
-alias sv='sudo -E vim'
-alias v='vim'
 
 if [ -n "$ZSH_VERSION" ]; then
     # Keeping this on emacs mode until I figure out how to deal with the vi mode debian issue
