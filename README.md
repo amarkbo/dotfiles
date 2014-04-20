@@ -35,9 +35,16 @@ One day, I will make a script.
 
     - pip install --user git+git://github.com/Lokaltog/powerline
 
-    - source tmux.conf and powerline.conf (powerline.conf comes first)
+    - source tmux.conf and powerline.conf into .tmux.conf (full paths, powerline.conf comes first)
 
-9. link ~/.config/powerline to powerline config directory
+        source '/home/USER/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf'
+        source '/home/USER/.nixenv/tmux.conf'
+
+    - on mac (iterm2), add this line at the top of .tmux.conf:
+
+        set -g default-terminal "screen-256color"
+
+9. link ~/.nixenv/powerline to ~/.config/powerline
 
 10. Source global git config
 

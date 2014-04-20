@@ -6,6 +6,7 @@ export EDITOR=vim
 alias v='vim'
 alias sv='sudo -E vim'
 alias groot='cd $(git rev-parse --show-cdup)'
+alias vime="vim -u ~/.nixenv/vim_encryptrc -x" 
 
 # OS X or Linux
 if [[ "$OSTYPE" == darwin* ]]; then
