@@ -6,7 +6,7 @@ export EDITOR=vim
 alias v='vim'
 alias sv='sudo -E vim'
 alias groot='cd $(git rev-parse --show-cdup)'
-alias vime="vim -u ~/.nixenv/vim_encryptrc -x" 
+alias vime="vim -u ~/.nixenv/vim_encryptrc" 
 
 # OS X or Linux
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -22,6 +22,7 @@ else
     fi
 fi
 
+# ZSH specific
 if [ -n "$ZSH_VERSION" ]; then
     # Keeping this on emacs mode until I figure out how to deal with the vi mode debian issue
     # (see: http://www.mgoff.in/2012/05/09/zsh-command-history-cursor-at-the-end-of-the-line/)
@@ -32,7 +33,11 @@ if [ -n "$ZSH_VERSION" ]; then
         emulate -L zsh
         ls
     }
+    
+    # http://bower.io/
+    alias bower='noglob bower'
 
+# BASH specific
 elif [ -n "$BASH_VERSION" ]; then
 
     export PS1='\[\e[1m\][\u@\h\:\w] $\[\e[m\] '
