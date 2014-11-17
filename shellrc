@@ -7,6 +7,7 @@ alias v='vim'
 alias sv='sudo -E vim'
 alias groot='cd $(git rev-parse --show-cdup)'
 alias vime="vim -u ~/.nixenv/vim_encryptrc" 
+alias tma="tmux attach"
 
 # OS X or Linux
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -16,7 +17,7 @@ else
     alias ls='ls --classify --color=auto'
     alias ack='ack-grep'
 
-    # Attach to tmux
+    # Auto attach to tmux
     if [[ "$TERM" != screen* ]]; then
         tmux attach
     fi

@@ -1,5 +1,3 @@
-### source this file and shellrc ### 
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
