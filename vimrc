@@ -151,6 +151,9 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 " ===== GUI ====
 
+" c-l remaped mapped above
+nmap <leader>l :redraw!<CR>
+
 " pretty colors
 if !has("gui_running")
     let g:solarized_termtrans=1
