@@ -2,12 +2,15 @@
 
 export EDITOR=vim
 
-# go to git root
 alias v='vim'
 alias sv='sudo -E vim'
+# go to git root
 alias groot='cd $(git rev-parse --show-cdup)'
 alias vime="vim -u ~/.nixenv/vim_encryptrc" 
 alias tma="tmux attach"
+
+function absolute_path { echo "$PWD/$1"; }
+alias ap="absolute_path"
 
 # OS X or Linux
 if [[ "$OSTYPE" == darwin* ]]; then

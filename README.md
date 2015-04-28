@@ -51,4 +51,4 @@ One day, I will make a script.
 
 11. Source global git config
 
-12. Link everything else! (.vimrc)
+12. Link everything else! (.vimrc, .gitconfig, etc.)
