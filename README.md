@@ -27,11 +27,16 @@ One day, I will make a script.
 
         git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
-7. install tmux
+7. run vundle install (compile YouCompleteMe if needed)
+    
+        vim
+        :VundleInstall
 
-8. install powerline
+8. install tmux
 
-        pip install --user git+git://github.com/Lokaltog/powerline
+9. install powerline
+
+        pip install --user powerline-status
 
     source tmux.conf and powerline.conf into .tmux.conf (full paths, powerline.conf comes first)
 
@@ -42,8 +47,8 @@ One day, I will make a script.
 
         set -g default-terminal "screen-256color"
 
-9. link ~/.nixenv/powerline to ~/.config/powerline
+10. link ~/.nixenv/powerline to ~/.config/powerline
 
-10. Source global git config
+11. Source global git config
 
-11. Link everything else! (.vimrc)
+12. Link everything else! (.vimrc)
