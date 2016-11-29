@@ -30,6 +30,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'henrik/vim-indexed-search'
 
 " ===== NAVIGATION =====
 
