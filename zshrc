@@ -14,6 +14,9 @@ ZSH_THEME="mhamar"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
+# Don't ask about updates, just do them
+DISABLE_UPDATE_PROMPT=true
+
 # Uncomment this to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
 
@@ -45,7 +48,9 @@ DISABLE_LS_COLORS="false"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vi-mode)
+
+#plugins=(git vi-mode)
+plugins=()
 
 # User configuration
 
