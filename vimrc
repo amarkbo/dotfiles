@@ -10,27 +10,20 @@ set backspace=2
 
 " ===== BUNDLES =====
 
-" Using Vundle (info below)
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'gmarik/vundle'
 
-Bundle 'gmarik/vundle'
-
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
 " Note: uses jshint
-Bundle 'scrooloose/syntastic'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'henrik/vim-indexed-search'
+Plugin 'scrooloose/syntastic'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'henrik/vim-indexed-search'
 
 " ===== NAVIGATION =====
 
